@@ -1,0 +1,16 @@
+--SELECT * FROM Oddzialy
+--SELECT * FROM Pracownicy
+--SELECT Nazwisko, ((Placa_pod + ISNULL(Placa_dod, 0)*12)) AS Praca_rocz FROM Pracownicy
+--SELECT Nazwisko, ((Placa_pod + ISNULL(Placa_dod, 0)*12)) AS Praca_rocz FROM Pracownicy ORDER BY Praca_rocz
+--SELECT Nazwisko, ((Placa_pod + ISNULL(Placa_dod, 0)*12)) AS Praca_rocz FROM Pracownicy ORDER BY Praca_rocz DESC
+--SELECT Nazwisko, Stanowisko, (Placa_pod + ISNULL(Placa_dod, 0)) AS Miesieczne_zarobki FROM Pracownicy
+--SELECT * FROM Oddzialy ORDER BY Nazwa
+--SELECT DISTINCT Stanowisko FROM Pracownicy
+--SELECT * FROM Pracownicy WHERE Stanowisko='Kierownik'
+--SELECT ID, Nazwisko, Stanowisko, Placa_pod, ID_Oddz FROM Pracownicy WHERE ID_Oddz in (30,40)
+--SELECT Nazwisko, ID_Oddz AS Oddzial, Placa_pod FROM Pracownicy WHERE Placa_pod BETWEEN 1300 AND 1800
+--SELECT Nazwisko, Stanowisko, ID_Oddz AS Oddzial FROM Pracownicy WHERE Nazwisko LIKE '%SKI'
+--SELECT ID, Szef, Nazwisko, Placa_pod FROM Pracownicy WHERE (Placa_pod + ISNULL(Placa_dod, 0))>2000 AND SZEF IS NOT NULL
+--SELECT Nazwisko, ID_Oddz AS Oddzial FROM Pracownicy WHERE ID_Oddz=20 AND Nazwisko LIKE 'M%' OR Nazwisko LIKE '%SKI'
+--SELECT Nazwisko, Stanowisko, (Placa_pod + ISNULL(Placa_dod, 0))/20/8 AS Zarobki FROM Pracownicy WHERE Stanowisko NOT IN ('Brygadzista', 'Monter', 'Praktykant') AND (Placa_pod + ISNULL(Placa_dod, 0)) NOT BETWEEN 1400 AND 1800 ORDER BY Zarobki
+SELECT Nazwisko, Stanowisko, Placa_pod, Placa_dod FROM Pracownicy WHERE (Placa_pod + ISNULL(Placa_dod, 0))>3000 ORDER BY Stanowisko
